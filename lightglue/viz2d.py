@@ -129,8 +129,8 @@ def plot_matches(kpts0, kpts1, color=None, lw=1.5, ps=4, a=1.0, labels=None, axe
     if lw > 0:
         for i in range(len(kpts0)):
             line = matplotlib.patches.ConnectionPatch(
-                xyA=(kpts0[i, 0], kpts0[i, 1]),
-                xyB=(kpts1[i, 0], kpts1[i, 1]),
+                xyA=(kpts0[i][0], kpts0[i][1]),
+                xyB=(kpts1[i][0], kpts1[i][1]),
                 coordsA=ax0.transData,
                 coordsB=ax1.transData,
                 axesA=ax0,
@@ -151,8 +151,8 @@ def plot_matches(kpts0, kpts1, color=None, lw=1.5, ps=4, a=1.0, labels=None, axe
     ax1.autoscale(enable=False)
 
     if ps > 0:
-        ax0.scatter(kpts0[:, 0], kpts0[:, 1], c=color, s=ps)
-        ax1.scatter(kpts1[:, 0], kpts1[:, 1], c=color, s=ps)
+        ax0.scatter(kpts0[:][0], kpts0[:][1], c=color, s=ps)
+        ax1.scatter(kpts1[:][0], kpts1[:][1], c=color, s=ps)
 
 
 def add_text(
